@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Break-Scheduler/static/css/main.4e469b02.css",
+    "main.js": "/Break-Scheduler/static/js/main.58f7843f.js",
+    "static/js/453.c74f6335.chunk.js": "/Break-Scheduler/static/js/453.c74f6335.chunk.js",
+    "index.html": "/Break-Scheduler/index.html",
+    "main.4e469b02.css.map": "/Break-Scheduler/static/css/main.4e469b02.css.map",
+    "main.58f7843f.js.map": "/Break-Scheduler/static/js/main.58f7843f.js.map",
+    "453.c74f6335.chunk.js.map": "/Break-Scheduler/static/js/453.c74f6335.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4e469b02.css",
+    "static/js/main.58f7843f.js"
+  ]
+}
