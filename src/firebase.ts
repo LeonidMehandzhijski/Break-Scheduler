@@ -1,19 +1,18 @@
-// Import the functions you need from the SDKs you need
+// src/firebase.ts
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getFirestore } from "firebase/firestore";
 import { getAuth } from 'firebase/auth';
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+// Your web app's Firebase configuration is now read from environment variables
 const firebaseConfig = {
-  apiKey: "AIzaSyBFuCWUIZP4TRy9vlwe6vxMM794SKIK-Jo",
-  authDomain: "pauzi-a69be.firebaseapp.com",
-  projectId: "pauzi-a69be",
-  storageBucket: "pauzi-a69be.appspot.com",
-  messagingSenderId: "288205053019",
-  appId: "1:288205053019:web:4623ffb925d53d628db37e",
-  measurementId: "G-DPTQH9W13S"
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID,
+  measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID
 };
 
 // Initialize Firebase
