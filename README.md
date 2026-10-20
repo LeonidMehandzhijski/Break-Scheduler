@@ -1,30 +1,31 @@
 # Break Scheduler
 
-A Microsoft Teams-friendly break management app for coordinating team breaks, agent availability, and shift coverage in a simple drag-and-drop interface.
+Break Scheduler is a web-based staff scheduling application for managing rest breaks, agent availability, and shift coverage in a simple drag-and-drop interface.
 
-This project is built with React, TypeScript, and Tailwind CSS, with Firebase hosting and backend support for a lightweight deployment setup.
+The project was originally explored as a Microsoft Teams app, but it now functions as a browser-based application deployed through Firebase and Google Cloud infrastructure with Firestore-backed data.
 
 ## Overview
 
 Break Scheduler helps teams:
 
 - assign and manage employee breaks
-- visualize work coverage across shifts
-- track the status of each agent
-- quickly reassign breaks through drag-and-drop interaction
-- demo scheduling workflows in a web app or Teams tab
+- visualize staffing coverage across shifts
+- track agent status and break activity
+- quickly reassign breaks with drag-and-drop scheduling
+- test and demo scheduling workflows in a browser environment
 
-It is designed for operations, support, and customer-facing teams that need a practical way to coordinate rest breaks without manual spreadsheets or chat-based coordination.
+It is designed for operations, support, and customer-facing teams that need a practical way to coordinate rest periods without relying on manual spreadsheets or chat-based coordination.
 
 ## Features
 
-- Drag-and-drop scheduling interface
-- Agent and shift management
-- Break assignment and status updates
-- Real-time event banner for active/finished breaks
-- Responsive layout for browser-based use
-- Firebase-ready hosting and backend configuration
-- Microsoft Teams app manifest support
+- Drag-and-drop break scheduling
+- Shift-based timetable layout
+- Agent availability and status tracking
+- Real-time break event updates
+- Responsive web UI
+- Firebase Hosting and backend configuration
+- Firestore-ready data model
+- Cloud Functions support for backend logic
 
 ## Tech Stack
 
@@ -34,7 +35,7 @@ It is designed for operations, support, and customer-facing teams that need a pr
 - Firebase Hosting
 - Firebase Functions
 - Firestore
-- Microsoft Teams integration
+- Google Cloud / Firebase deployment tools
 
 ## Project Structure
 
@@ -66,6 +67,8 @@ Break-Scheduler/
 └── ...
 ```
 
+Note: the `public/teams` folder is legacy or optional material from the earlier Teams prototype. It is not required for the current website-focused deployment.
+
 ## Getting Started
 
 ### Prerequisites
@@ -92,33 +95,45 @@ npm start
 npm run build
 ```
 
-### Deploy with Firebase
+### Deploy to Firebase
 
 ```bash
 firebase login
 firebase deploy
 ```
 
-## Firebase and Teams Configuration
+## Firebase / Cloud Architecture
 
-This repository includes:
+This project is designed to run as a Firebase-hosted web app with:
 
-- `firebase.json` for hosting and function configuration
-- `public/teams/manifest.json` for Microsoft Teams app metadata
-- `functions/` for server-side logic and Firebase Functions
+- frontend hosted through Firebase Hosting
+- app logic in the React client
+- backend logic in Firebase Functions
+- data stored in Firestore
+- optional Google Cloud deployment compatibility
 
-Before deploying to Teams or production, update app metadata such as URLs, IDs, and domain values to match your environment.
+The current app is web-first and does not depend on a Teams tab implementation as its main runtime path.
 
-## Notes
+## Local Development Notes
 
-- The app includes mock/demo scheduling data for testing and demos.
+- The app includes mock/demo scheduling data for testing and demonstration.
 - Local environment files such as `.env` should not be committed to source control.
-- IDE and Firebase local cache folders should be ignored and cleaned up before shipping.
+- IDE and Firebase local cache folders such as `.idea/` and `.firebase/` should be ignored and cleaned up before deployment.
+
+## Environment and Deployment Considerations
+
+Before production deployment, make sure to review:
+
+- Firebase project configuration
+- Firestore rules and indexes
+- environment variables and secrets
+- app URLs and deployed front-end routing
+- any legacy Teams-specific manifest settings you may no longer use
 
 ## License
 
-This project does not currently appear to include a license file. If you plan to share or distribute it publicly, consider adding an open-source license such as MIT.
+This project does not currently include a formal license file. If you plan to distribute or publish it publicly, consider adding an open-source license such as MIT.
 
 ## Contributing
 
-Pull requests are welcome. If you want to improve break logic, add new features, or connect the app to real data sources, feel free to contribute.
+Pull requests are welcome. If you want to improve scheduling logic, connect the app to real data, or expand the backend, feel free to contribute.
